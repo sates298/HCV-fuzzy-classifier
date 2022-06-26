@@ -101,9 +101,7 @@ def sugeno_value(sample):
     weights = wzs[:, 1].sum()
     return values/weights
 
-
-def classify(sample, return_val=False):
-    thresholds = [1, 1.25, 1.5, 2]
+def classify(sample, thresholds, return_val=False):
     value = sugeno_value(sample)
     category = -1 
     for i, threshold in enumerate(thresholds):
